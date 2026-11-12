@@ -1,0 +1,256 @@
+﻿@{
+    ViewData["Title"] = "Inicio - Infinity Core";
+}
+
+<style>
+    /* Custom Styling for Infinity Core Tech Theme */
+    .hero-banner {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card-hover {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .img-placeholder {
+        background-color: #f1f5f9;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: #64748b;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .category-card {
+        background-size: cover;
+        background-position: center;
+        min-height: 140px;
+        border: none;
+        border-radius: 0.75rem;
+        transition: transform 0.2s ease;
+    }
+
+    .category-card:hover {
+        transform: scale(1.02);
+    }
+
+    .bg-gradient-blue {
+        background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+    }
+
+    .bg-gradient-green {
+        background: linear-gradient(45deg, #065f46, #10b981);
+    }
+
+    .bg-gradient-purple {
+        background: linear-gradient(45deg, #581c87, #a855f7);
+    }
+
+    .bg-gradient-orange {
+        background: linear-gradient(45deg, #9a3412, #f97316);
+    }
+</style>
+
+<!-- 1. MODERN HERO SECTION -->
+<section class="hero-banner text-white p-4 p-md-5 mb-5 mt-2">
+    <div class="row align-items-center py-4">
+        <div class="col-lg-8">
+            <span class="badge bg-primary px-3 py-2 mb-3 rounded-pill text-uppercase">Componentes & Microelectrónica</span>
+            <h1 class="display-4 fw-bold mb-3">Infinity Core</h1>
+            <p class="lead text-light mb-4 opacity-75">
+                Tu plataforma especializada en la venta de componentes electrónicos, microcontroladores, módulos de desarrollo y herramientas para tus proyectos tecnológicos.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+                <a asp-controller="Productos" asp-action="Index" class="btn btn-primary btn-lg px-4 rounded-pill font-weight-bold">
+                    Ver Catálogo
+                </a>
+                <a asp-controller="Cuenta" asp-action="registro" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                    Registrarse
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-flex justify-content-center">
+            <div class="p-4 rounded-4 bg-white bg-opacity-10 text-center border border-light border-opacity-25">
+                <h3 class="fw-bold mb-2">Envíos a Todo el País</h3>
+                <p class="small text-light opacity-75 mb-0">Atención a estudiantes, makers y profesionales de la industria.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. BENEFICIOS / FEATURES -->
+<section class="mb-5">
+    <div class="row g-3">
+        <div class="col-6 col-md-3">
+            <div class="p-3 text-center bg-light rounded-3 h-100 border">
+                <h6 class="fw-bold mb-1 text-dark">Envío Rápido</h6>
+                <small class="text-muted">Despacho en 24-48 horas</small>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-3 text-center bg-light rounded-3 h-100 border">
+                <h6 class="fw-bold mb-1 text-dark">Garantía de Calidad</h6>
+                <small class="text-muted">Componentes probados</small>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-3 text-center bg-light rounded-3 h-100 border">
+                <h6 class="fw-bold mb-1 text-dark">Soporte Técnico</h6>
+                <small class="text-muted">Asesoría especializada</small>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-3 text-center bg-light rounded-3 h-100 border">
+                <h6 class="fw-bold mb-1 text-dark">Pagos Seguros</h6>
+                <small class="text-muted">Transacciones cifradas</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. POPULAR CATEGORIES GRID -->
+<section class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold m-0 text-dark">Categorías Populares</h2>
+            <p class="text-muted small m-0">Explora nuestro catálogo por especialidad</p>
+        </div>
+        <a asp-controller="Tienda" asp-action="Index" class="btn btn-sm btn-outline-primary rounded-pill">Ver Todas</a>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-md-3 col-sm-6">
+            <div class="card category-card bg-gradient-blue text-white p-3 d-flex flex-column justify-content-end">
+                <h5 class="fw-bold mb-1">Microcontroladores</h5>
+                <small class="text-white-50">Arduino, ESP32, PIC</small>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="card category-card bg-gradient-green text-white p-3 d-flex flex-column justify-content-end">
+                <h5 class="fw-bold mb-1">Sensores</h5>
+                <small class="text-white-50">Temperatura, Luz, Presión</small>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="card category-card bg-gradient-purple text-white p-3 d-flex flex-column justify-content-end">
+                <h5 class="fw-bold mb-1">Componentes Pasivos</h5>
+                <small class="text-white-50">Resistencias, Capacitores</small>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="card category-card bg-gradient-orange text-white p-3 d-flex flex-column justify-content-end">
+                <h5 class="fw-bold mb-1">Robótica</h5>
+                <small class="text-white-50">Motores, Servos, Drivers</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. FEATURED PRODUCTS GRID -->
+<section class="mb-5">
+    <div class="mb-4">
+        <h2 class="fw-bold m-0 text-dark">Productos Destacados</h2>
+        <p class="text-muted small m-0">Selección de los componentes más buscados</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Producto 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card card-hover h-100 rounded-3 overflow-hidden">
+                <div class="img-placeholder">
+                    <span>Imagen</span>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <span class="badge bg-secondary w-auto align-self-start mb-2">Microcontrolador</span>
+                    <h6 class="card-title fw-bold text-dark">Producto</h6>
+                    <p class="text-muted small flex-grow-1">-----------------------------------.</p>
+                    <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                        <span class="fs-5 fw-bold text-primary">$00.00</span>
+                        <button class="btn btn-sm btn-primary rounded-pill px-3">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card card-hover h-100 rounded-3 overflow-hidden">
+                <div class="img-placeholder">
+                    <span>Imagen</span>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <span class="badge bg-secondary w-auto align-self-start mb-2">Sensor</span>
+                    <h6 class="card-title fw-bold text-dark">Producto</h6>
+                    <p class="text-muted small flex-grow-1">-------------------------------------</p>
+                    <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                        <span class="fs-5 fw-bold text-primary">$00.00</span>
+                        <button class="btn btn-sm btn-primary rounded-pill px-3">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card card-hover h-100 rounded-3 overflow-hidden">
+                <div class="img-placeholder">
+                    <span>Imagen</span>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <span class="badge bg-secondary w-auto align-self-start mb-2">Robótica</span>
+                    <h6 class="card-title fw-bold text-dark">Producto</h6>
+                    <p class="text-muted small flex-grow-1">----------------------</p>
+                    <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                        <span class="fs-5 fw-bold text-primary">$00.00</span>
+                        <button class="btn btn-sm btn-primary rounded-pill px-3">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card card-hover h-100 rounded-3 overflow-hidden">
+                <div class="img-placeholder">
+                    <span>Imagen</span>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <span class="badge bg-secondary w-auto align-self-start mb-2">Accesorios</span>
+                    <h6 class="card-title fw-bold text-dark">Producto</h6>
+                    <p class="text-muted small flex-grow-1">------------------------</p>
+                    <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                        <span class="fs-5 fw-bold text-primary">$00.00</span>
+                        <button class="btn btn-sm btn-primary rounded-pill px-3">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. NEWSLETTER BOX -->
+<section class="bg-dark text-white p-4 p-md-5 rounded-3 mb-4">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+            <h4 class="fw-bold mb-1">Boletín Informativo</h4>
+            <p class="text-muted small mb-0">Recibe noticias de nuevos componentes, recursos y ofertas exclusivas.</p>
+        </div>
+        <div class="col-md-6">
+            <form class="d-flex gap-2">
+                <input type="email" class="form-control rounded-pill px-3" placeholder="Tu correo electrónico..." required>
+                <button type="submit" class="btn btn-primary rounded-pill px-4">Suscribirme</button>
+            </form>
+        </div>
+    </div>
+</section>

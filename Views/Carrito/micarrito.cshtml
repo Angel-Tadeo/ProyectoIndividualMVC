@@ -1,0 +1,155 @@
+@{
+    ViewData["Title"] = "Carrito de Compras - Infinity Core";
+}
+
+<div class="container py-4">
+    <!-- Encabezado -->
+    <div class="border-bottom pb-3 mb-4 d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="fw-bold text-dark mb-1">Tu Carrito</h1>
+            <p class="text-muted mb-0">Revisa tus productos antes de finalizar la compra</p>
+        </div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-sm">
+            &larr; Seguir comprando
+        </a>
+    </div>
+
+    <div class="row g-4">
+        <!-- TABLA DE PRODUCTOS EN EL CARRITO -->
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                                <tr class="text-secondary small fw-semibold">
+                                    <th scope="col" style="min-width: 200px;">Producto</th>
+                                    <th scope="col" class="text-center">Precio</th>
+                                    <th scope="col" class="text-center" style="width: 130px;">Cantidad</th>
+                                    <th scope="col" class="text-end">Subtotal</th>
+                                    <th scope="col" class="text-center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Ítem de ejemplo 1 -->
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light border rounded p-2 me-3 text-center text-muted" style="width: 50px; height: 50px;">
+                                                <small class="fw-bold">IMG</small>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">Producto: </h6>
+                                                <small class="text-muted">Categoría: </small>
+                                            </div>  
+                                        </div>
+                                    </td>
+                                    <td class="text-center">$0.00</td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <button class="btn btn-outline-secondary" type="button">-</button>
+                                            <input type="text" class="form-control text-center" value="2" readonly />
+                                            <button class="btn btn-outline-secondary" type="button">+</button>
+                                        </div>
+                                    </td>
+                                    <td class="text-end fw-semibold">$0.00</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-link text-danger p-0 border-0" title="Eliminar del carrito">
+                                            &times;
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Ítem de ejemplo 2 -->
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light border rounded p-2 me-3 text-center text-muted" style="width: 50px; height: 50px;">
+                                                <small class="fw-bold">IMG</small>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">Producto </h6>
+                                                <small class="text-muted">Categoría:</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">$0.00</td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <button class="btn btn-outline-secondary" type="button">-</button>
+                                            <input type="text" class="form-control text-center" value="1" readonly />
+                                            <button class="btn btn-outline-secondary" type="button">+</button>
+                                        </div>
+                                    </td>
+                                    <td class="text-end fw-semibold">$0.00</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-link text-danger p-0 border-0" title="Eliminar del carrito">
+                                            &times;
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Botón para vaciar carrito o refrescar -->
+                    <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                        <button class="btn btn-outline-danger btn-sm">Vaciar Carrito</button>
+                        <span class="text-muted small"># productos seleccionados</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- RESUMEN DE COMPRA / CHECKOUT -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-dark mb-3">Resumen del Pedido</h5>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-secondary small">Subtotal</span>
+                        <span class="fw-semibold">$0.00</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-secondary small">Envío estimado</span>
+                        <span class="text-success small fw-semibold">Gratis</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-secondary small">Impuestos (IVA 16%)</span>
+                        <span class="fw-semibold">$0.00</span>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <span class="fw-bold text-dark">Total</span>
+                        <span class="fs-4 fw-bold text-dark">$0.00</span>
+                    </div>
+
+                    <!-- Cupones opcionales -->
+                    <div class="mb-3">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" placeholder="Código de descuento">
+                            <button class="btn btn-outline-dark" type="button">Aplicar</button>
+                        </div>
+                    </div>
+
+                    <!-- Botón de Acción Principal -->
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark btn-lg fs-6 fw-bold">Proceder al Pago</a>
+                    </div>
+
+                    <p class="text-muted text-center small mt-3 mb-0">
+                        Paga de forma segura. Envíos garantizados.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

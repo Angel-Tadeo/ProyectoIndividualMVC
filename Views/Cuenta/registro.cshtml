@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Crear Cuenta - Infinity Core";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-body p-4 p-sm-5">
+                    
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-dark">Crear Cuenta</h2>
+                        <p class="text-muted small">Regístrate para realizar compras y gestionar tus pedidos en Infinity Core</p>
+                    </div>
+
+                    <form asp-controller="Cuenta" asp-action="registro" method="post">
+                        
+                        <!-- Nombre y Apellidos -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label text-secondary fw-semibold small">Nombre(s)</label>
+                                <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Ej. Juan" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="apellidos" class="form-label text-secondary fw-semibold small">Apellido(s)</label>
+                                <input type="text" class="form-control" id="apellidos" name="Apellidos" placeholder="Ej. Pérez" required />
+                            </div>
+                        </div>
+
+                        <!-- Correo Electrónico -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-secondary fw-semibold small">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="Email" placeholder="usuario@ejemplo.com" required />
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label text-secondary fw-semibold small">Teléfono de Contacto</label>
+                            <input type="tel" class="form-control" id="telefono" name="Telefono" placeholder="Ej. 5512345678" />
+                        </div>
+
+                        <!-- Contraseña -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label text-secondary fw-semibold small">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="Password" placeholder="••••••••" required />
+                        </div>
+
+                        <!-- Confirmar Contraseña -->
+                        <div class="mb-4">
+                            <label for="confirmPassword" class="form-label text-secondary fw-semibold small">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="ConfirmPassword" placeholder="••••••••" required />
+                        </div>
+
+                        <!-- Botón de Registro -->
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-dark btn-lg fs-6 fw-bold">Registrarse</button>
+                        </div>
+
+                        <!-- Enlace a Login -->
+                        <div class="text-center mt-4">
+                            <span class="text-muted small">¿Ya tienes una cuenta?</span>
+                            <a asp-controller="Cuenta" asp-action="login" class="text-decoration-none fw-bold text-dark ms-1 small">Inicia sesión aquí</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
